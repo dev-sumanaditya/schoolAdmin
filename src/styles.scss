@@ -1,1 +1,299 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ag-grid-community/dist/styles/ag-grid.css';
+@import 'ag-grid-community/dist/styles/ag-theme-balham.css';
+
+* {
+  outline: none;
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6, .head {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+// colors
+.danger {
+  color: crimson;
+}
+.bg-danger {
+  background-color: #ea9085;
+}
+
+
+// layout classes
+//flex size
+.flex1 {
+ flex: 1;
+}
+.flex2 {
+  flex: 2;
+}
+.flex3 {
+  flex: 3;
+}
+.flex4 {
+  flex: 4;
+}
+.flex5 {
+  flex: 5;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+
+//row and column
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.row-sm {
+  display: flex;
+  flex-direction: row;
+}
+.row-md {
+  display: flex;
+  flex-direction: row;
+}
+.row-lg {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+// relative & absolute
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+//margin & padding
+.p1 {
+  padding: 10px;
+}
+.p1-h {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.p1-v {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.m1 {
+  margin: 10px;
+}
+.m1-h {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.m1-v {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+//components
+
+// vertical separator
+.separator {
+  border-right: 1px solid #ddd;
+  height: 30px;
+  margin: 0 10px;
+}
+
+//buttons
+//icon button
+.i-btn {
+  padding: 5px 10px;
+  background-color: rgba(221, 221, 221, 0.001);
+  cursor: pointer;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+
+  &:active {
+    background-color: rgba(221, 221, 221, 0.1);
+  }
+}
+.i-btn1 {
+  font-size: 22px;
+}
+.i-btn2 {
+  font-size: 16px;
+}
+
+//button
+.btn {
+  border: 1px solid #ddd;
+  padding: 5px 15px;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+  background-color: #00909e;
+  color: white;
+
+  &:hover {
+    filter: brightness(95%);
+  }
+  &:active {
+    filter: brightness(85%);
+    box-shadow: 0px 1px 3px -2px #333;
+  }
+}
+
+//card
+.card {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0px 1px 5px -3px #333;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+
+  .title {
+    padding: 8px 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content {
+    padding: 10px;
+  }
+  .footer {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+//popover
+.popover {
+  right: 0;
+  top: calc(100% + 5px);
+  z-index: 500;
+  background-color: #fff;
+  color: #333;
+  border-radius: 3px;
+  box-shadow: 0px 1px 5px -2px #333;
+  min-width: 160px;
+  overflow: hidden;
+  max-height: 800px;
+  transition-duration: 0.2s;
+
+  .item {
+    padding: 5px 20px;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(236, 236, 236);
+    }
+    &:first-child {
+      margin-top: 5px;
+    }
+    &:last-child {
+      margin-bottom: 7px;
+    }
+  }
+}
+.closePop {
+  max-height: 0px;
+}
+
+//formItem
+.formItem {
+  display: flex;
+  flex-direction: column;
+  label {
+   font-size: 12px;
+   font-weight: 600;
+  }
+  input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid rgb(170, 170, 170);
+    padding: 7px 2px 2px 2px;
+    font-size: 14px;
+
+    &:focus {
+      border-bottom: 2px solid #27496d;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .row-sm {
+    flex-direction: column;
+  }
+}
+
+
+/* Tab */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .row-sm {
+    flex-direction: column;
+  }
+  .row-md {
+    flex-direction: column;
+  }
+}
+
+
+/* tab/cellphone */
+@media (min-width: 481px) and (max-width: 767px) {
+  .row-sm {
+    flex-direction: column;
+  }
+  .row-md {
+    flex-direction: column;
+  }
+  .row-lg {
+    flex-direction: column;
+  }
+}
+
+/* Smartphone */
+@media (min-width: 320px) and (max-width: 480px) {
+  .row-sm {
+    flex-direction: column;
+  }
+  .row-md {
+    flex-direction: column;
+  }
+  .row-lg {
+    flex-direction: column;
+  }
+}

@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PanelComponent } from './panel/panel.component';
+import { AgGridModule } from 'ag-grid-angular';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgGridModule.withComponents()
   ],
   providers: [],
   bootstrap: [AppComponent]
