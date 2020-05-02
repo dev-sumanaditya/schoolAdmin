@@ -1,0 +1,26 @@
+.container {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.class {
+  align-items: center;
+
+  .name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+}
+
+.sections {
+  margin-left: 20px;
+  margin-top: 5px;
+
+  .name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+  }
+}

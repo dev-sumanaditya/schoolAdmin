@@ -1,0 +1,15 @@
+<div class="vertical container" *ngFor="let Class of Classes">
+  <div class="row class">
+    <input type="radio" id="{{Class.id}}" name="class" [value]="Class.id" [(ngModel)]="checked" (change)="reset()">
+    <span class="name">{{Class.name}}</span>
+    <div class="flex-grow"></div>
+  </div>
+  <div class="vertical sections" *ngIf="checked == Class.id">
+    <form [formGroup]="form">
+      <div class="row" *ngFor="let section of Class.sections">
+        <input type="radio" id="{{section.name}}" value="{{Class.id}} {{section.name}}" (change)="check()" formControlName="section">
+        <span class="name">{{section.name}}</span>
+      </div>
+    </form>
+  </div>
+</div>

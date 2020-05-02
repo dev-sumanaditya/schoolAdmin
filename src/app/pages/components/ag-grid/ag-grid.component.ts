@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AgGridAngular } from 'ag-grid-angular';
-
 
 @Component({
   selector: 'app-ag-grid',
@@ -10,19 +9,18 @@ import { AgGridAngular } from 'ag-grid-angular';
 })
 export class AgGridComponent implements OnInit {
 
-  public columnDefs = [
-    {headerName: 'ID', field: 'index', sortable: true, filter: true, checkboxSelection: true },
-    {headerName: 'NAME', field: 'name', sortable: true, filter: true },
-    {headerName: 'EMAIL', field: 'email', sortable: true, filter: true},
-    {headerName: 'CONTACT', field: 'contact', sortable: true, filter: true},
-    {headerName: 'QUERY', field: 'query', sortable: true, filter: true},
-    {headerName: 'DATE', field: 'date', sortable: true, filter: true},
-    {headerName: 'SOURCE', field: 'source', sortable: true, filter: true},
-    {headerName: 'PRIORITY', field: 'priority', sortable: true, filter: true}
-  ];
+  // inputs
+  @Input() header: any[];
+  @Input() url: any[];
+
+  // event emitters
+  @Output() rowSelected = new EventEmitter();
+  @Output() dataLoaded = new EventEmitter();
+
+  public columnDefs;
 
   public rowData;
-  public dataUrl = 'http://localhost:4000/leads';
+  public dataUrl;
   public loaded = false;
   public selectedRow;
 
@@ -31,14 +29,23 @@ export class AgGridComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.columnDefs = this.header;
+    this.dataUrl = this.url;
+
     this.http.get(this.dataUrl).subscribe((data) => {
       this.rowData = data;
       this.loaded = true;
-    });
+      this.dataLoaded.emit(true);
+    },
+    (error) => {
+      this.dataLoaded.emit(error);
+    }
+    );
   }
 
   public onSelectionChanged() {
     this.getSelectedRows();
+    this.rowSelected.emit(this.selectedRow);
   }
 
   getSelectedRows() {

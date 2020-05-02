@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="row flex1">
+    <div class="card flex1">
+      <div class="title">
+        <span>Create Principal</span>
+        <div class="i-btn i-btn2" [class.rotate]="options[1]" (click)="expand(1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+      </div>
+      <div class="content" [class.forms]="!options[1]">
+        <div class="row-md">
+          <div class="formItem flex1 p1">
+            <label for="name">Name</label>
+            <input type="text" spellcheck="false">
+          </div>
+          <div class="formItem flex1 p1">
+            <label for="name">Email</label>
+            <input type="text" spellcheck="false">
+          </div>
+        </div>
+        <div class="row-md">
+          <div class="formItem flex1 p1">
+            <label for="name">Contact No.</label>
+            <input type="text" spellcheck="false">
+          </div>
+          <div class="formItem flex1 p1">
+            <label for="name">Password</label>
+            <input type="text" spellcheck="false">
+          </div>
+        </div>
+        <div class="row-md">
+          <div class="formItem flex1 p1">
+            <label for="name">Role Id.</label>
+            <input type="text" spellcheck="false">
+          </div>
+          <div class="formItem flex1 p1">
+            <label for="name">Organisation Id</label>
+            <input type="text" spellcheck="false">
+          </div>
+        </div>
+        <div class="footer">
+          <div class="flex-grow"></div>
+          <div class="btn">SUBMIT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row flex1">
+    <div class="card flex1">
+      <div class="title">Organisation Details</div>
+      <div class="content">
+        <div class="row-md">
+          <div class="row-sm flex1">
+            <div class="card flex1 p1">
+              <strong>Principal</strong>
+              <h3>Dr, Hemlata Sashi Mohan</h3>
+            </div>
+            <div class="card flex1 p1">
+              <strong>Address</strong>
+              <h5>1234, Plot - A, near pg building, this, that7that, Jammu, J&K</h5>
+            </div>
+          </div>
+          <div class="row-sm flex1">
+            <div class="card flex1 p1">
+              <strong>No. of Teachers</strong>
+              <h2>224</h2>
+            </div>
+            <div class="card flex1 p1">
+              <strong>No. of Students</strong>
+              <h2>2488</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row flex1">
+    <div class="card flex1">
+      <div class="title">
+        <span>Add Class</span>
+        <div class="i-btn i-btn2" [class.rotate]="options[2]" (click)="expand(2)"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+      </div>
+      <div class="content" [class.forms]="!options[2]">
+        <div class="row-md">
+          <div class="formItem flex1 p1">
+            <label for="name">Class Name</label>
+            <input type="text" spellcheck="false">
+          </div>
+          <div class="row flex1 p1" style="align-items: center;">
+            <div class="btn">Add</div>
+            <div class="flex-grow"></div>
+            <span class="success">Added successfully</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-md flex1">
+    <div class="card flex1">
+      <div class="title">Classes</div>
+      <div class="content vertical">
+        <app-classbar (selected)="sectionSelected($event)"></app-classbar>
+      </div>
+    </div>
+    <div class="card flex1">
+      <div class="title">Section Details</div>
+      <div class="content"></div>
+    </div>
+  </div>
+</div>

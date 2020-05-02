@@ -1,0 +1,22 @@
+.container {
+  padding: 10px;
+}
+
+.card {
+  margin: 10px;
+}
+
+.forms {
+  max-height: 0px;
+  padding: 0px;
+}
+
+
+.expandedCard {
+  max-height: 1000px;
+}
+
+.rotate {
+  transition-duration: 0.3s;
+  transform: rotate(90deg) !important;
+}

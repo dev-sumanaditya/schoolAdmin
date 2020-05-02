@@ -22,6 +22,9 @@ h1,h2,h3,h4,h5,h6, .head {
 .bg-danger {
   background-color: #ea9085;
 }
+.success {
+  color: green;
+}
 
 
 // layout classes
@@ -136,6 +139,16 @@ h1,h2,h3,h4,h5,h6, .head {
 }
 
 //button
+.btn-disabled {
+  cursor: not-allowed !important;
+  filter: grayscale(100%) !important;
+   &:hover {
+     filter: grayscale(100%) !important;
+   }
+   &:active {
+     box-shadow: none !important;
+   }
+}
 .btn {
   border: 1px solid #ddd;
   padding: 5px 15px;

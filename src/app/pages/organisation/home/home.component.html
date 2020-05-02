@@ -45,8 +45,9 @@
     <div class="card flex1">
       <div class="title">
         <span>List of Organisations</span>
+        <div class="btn" [class.btn-disabled]="!selectedRow" (click)="openOrganisation()">Open</div>
       </div>
-      <app-ag-grid></app-ag-grid>
+      <app-ag-grid [header]="head" [url]="url" (rowSelected)="selected($event)" (dataLoaded)="gridLoaded($event)"></app-ag-grid>
     </div>
   </div>
 
